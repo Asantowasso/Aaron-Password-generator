@@ -1,9 +1,17 @@
 // Assignment Code
+
+
+var choiceArr = ["a", "b", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=","?"]
+
+
+
 var generateBtn = document.querySelector("#generate");
-var lowercase = "abcdefghijklmnopqrstuvwxyz";
-var uppercase = "ABCEFGHIJKLMNOPQRSTUVWXYZ";
+
+
 
 function generatePassword() {
+  var password = "";
+  
   // WHEN prompted for the length of the password
   // THEN I choose a length of at least 8 characters and no more than 128 characters
   var passwordlength = prompt("Enter 8-128");
@@ -19,7 +27,7 @@ function generatePassword() {
 var lowercase = confirm ("lowercase?");
 var uppercase = confirm ("uppercase?");
 var numeric = confirm ("numeric");
-var special = confirm ("specialcharacters");
+var special = confirm ("specialcharacters?");
 
 // WHEN I answer each prompt
 // THEN my input should be validated and at least one character type should be selected
@@ -27,6 +35,7 @@ if (lowercase === false && uppercase === false && numeric === false && special =
   alert("The password is not acceptable");
     return null;
 }
+
 
 
 
@@ -40,8 +49,13 @@ if (lowercase === false && uppercase === false && numeric === false && special =
   // What type of characters uppercase, lower, numbers, symbols
   // The created password follows the criteria
 
+  var index = Math.floor(Math.random() * choiceArr.length);
+var password = choiceArr[index];
+
   return "A password";
 }
+
+
 
 // Write password to the #password input
 function writePassword() {
